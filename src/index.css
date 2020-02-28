@@ -16,3 +16,8 @@ code {
 nav {
     background-color: turquoise;
 }
+
+h1 {
+    text-align: center;
+    color: red;
+}
