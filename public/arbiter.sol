@@ -1,4 +1,4 @@
-pragma solidity ^0.6.1;
+pragma solidity ^0.6.3;
 
 contract election{
     struct Candidate{
@@ -10,21 +10,24 @@ contract election{
         bool voted;
         uint vote;
     }
+    
 //deploys contract so every node in blockchain is connected to it. Those are state variables
-    addres public owner {
+address public owner;
 string public electionName;
 
-mapping(address =>) public voters;
+mapping(address => voter) public voters;
 Candidate[] public candidates;
 uint public totalVotes;
-    }
+    
+    
 modifier ownerOnly(){
     require(msg.sender == owner);
     _;
     // _; represent the the rest of the function below
 }
 
-function election(String, _name) public{
+function elect(string memory _name) public{
 owner= msg.sender;
 electionName = _name;
+}
 }
