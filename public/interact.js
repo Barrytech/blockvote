@@ -59,7 +59,7 @@ function CommitToArbiter() {
 function updatePrice() {
     $.ajax(url).done(function(res) {
 
-        // inside the function ^
+        // inside the function ^   CHANGE THIS TO VOTES IN AND VOTERS VOTED
         var price = res[0].price_usd;
         var change = res[0].percent_change_1h;
         var daychange = res[0].percent_change_24h;
@@ -80,20 +80,20 @@ function updatePrice() {
 
 
 
-    function updateBalance() {
-        if (web3.eth.accounts.length < 1) {
-            console.log("You don't have an account yet");
-            // TODO: update the DOM to tell the user that they need an account
-            $('#bal').html("You don't have an account yet!");
-        } else {
-            var myAccount = web3.eth.accounts[0];
-            web3.eth.getBalance(myAccount, function(err, balance) {
-                $('#bal').html('Balance: ' + web3.fromWei(balance, 'ether') + " ETH");
-            });
-        }
-        // update every 5s
-        setTimeout(updateBalance, 5000);
-    }
+    // function updateBalance() {
+    //     if (web3.eth.accounts.length < 1) {
+    //         console.log("You don't have an account yet");
+    //         // TODO: update the DOM to tell the user that they need an account
+    //         $('#bal').html("You don't have an account yet!");
+    //     } else {
+    //         var myAccount = web3.eth.accounts[0];
+    //         web3.eth.getBalance(myAccount, function(err, balance) {
+    //             $('#bal').html('Balance: ' + web3.fromWei(balance, 'ether') + " ETH");
+    //         });
+    //     }
+    //     // update every 5s
+    //     setTimeout(updateBalance, 5000);
+    // }
 
     function updateMakerDAOPrice() {
         if (web3.eth.accounts.length < 1) {
@@ -119,8 +119,8 @@ function updatePrice() {
 
 
 
-
-            function updateGameState() {
+            // Record the state of the election 
+            function updateElectionState() {
                 if (web3.eth.accounts.length < 1) {
                     console.log("You don't have an account yet");
                 } else {
@@ -129,22 +129,22 @@ function updatePrice() {
 
                         var electionAddress = abi.networks["4"].address;
                         var election = web3.eth.contract(abi.abi).at(electionAddress); // create functions from the ABI
-                        election.getGameState.call({ from: myAccount }, function(error, gameState) { // 'peek' is now a function!
+                        election.getElectionState.call({ from: myAccount }, function(error, ElectionState) { // 'peek' is now a function!
 
-                            // COMMIT_STATE = 0, REVEAL_STATE = 1, PAYOUT_STATE = 2
-                            console.log("The gameState is: " + gameState);
+                            // COMMIT_STATE = 0, REVEAL_STATE = 1, Results_STATE = 2
+                            console.log("The ElectionState is: " + ElectionState);
 
-                            if (gameState == 0) {
+                            if (ElectionState == 0) {
                                 $("#voted").css("background-color", "#9E2424");
 
                                 $("#voted").attr("disabled", true);
-                            } else if (gameState == 1) {
+                            } else if (ElectionState == 1) {
                                 $("#statecommit").css("background-color", "#E3E1E3");
                                 $("#statereveal").css("background-color", "#9E2424");
                                 $("#statepayouts").css("background-color", "white");
                                 $("#voted").attr("disabled", true);
                                 $("#payout").attr("disabled", true);
-                            } else if (gameState == 2) {
+                            } else if (ElectionState == 2) {
                                 $("#statecommit").css("background-color", "#E3E1E3");
                                 $("#statereveal").css("background-color", "#E3E1E3");
                                 $("#statepayouts").css("background-color", "#9E2424");
@@ -165,7 +165,7 @@ function updatePrice() {
                         });
 
                         // update very 10s
-                        setTimeout(updateGameState, 10000);
+                        setTimeout(updateElectiontate, 10000);
 
 
                         function commitToElection(value) {
@@ -257,8 +257,8 @@ function updatePrice() {
                                 var myAccount = web3.eth.accounts[0];
                                 $.ajax(electionABI, { dataType: 'json' }).done(function(abi) {
                                     var electionAddress = abi.networks["4"].address;
-                                    console.log("The address is: " + dareCoinAddress);
-                                    var election = web3.eth.contract(abi.abi).at(dareCoinAddress); // create functions from the ABI
+                                    console.log("The address is: " + electionAddress);
+                                    var election = web3.eth.contract(abi.abi).at(electionAddress); // create functions from the ABI
 
                                     console.log("TODO: implement revealToDareCoin..");
                                     console.log("theValue: " + theValue);
@@ -281,8 +281,8 @@ function updatePrice() {
                             $("#reveal").attr("disabled", true);
 
                             $(".vote").on('click', function() {
-                                //commitToDareCoin(1);
-                                $("#voted").append("1 vote in");
+                                commitToDareCoin(1);
+
                             });
 
                             $("#betNoChange").on('click', function() {
