@@ -15,5 +15,7 @@ serviceWorker.unregister();
 $('document').ready(function() {
             $("#test").click((function() {
                     $("#test").html("Hello world");
+                    console.log("Hi there");
                 });
+
             });
