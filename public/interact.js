@@ -11,7 +11,7 @@ var url = "https://api.coinmarketcap.com/v1/ticker/ethereum/";
 var makerDAOReaderABI = "https://raw.githubusercontent.com/makerdao/feeds/master/src/abi/readable.json";
 //var makerDAOAddress = "0x729D19f657BD0614b4985Cf1D82531c67569197B"; // on ethereum mainnet
 var makerDAOAddress = "0xE39451e34f8FB108a8F6d4cA6C68dd38f37d26E3"; // on rinkeby
-var dareCoinABI = "https://raw.githubusercontent.com/Barrytech/prescript-playground/master/build/contracts/Darecoin.json";
+var electionABI = "https://raw.githubusercontent.com/Barrytech/prescript-playground/master/build/contracts/Darecoin.json";
 
 var globalValue;
 var salt = genSalt();
@@ -280,8 +280,9 @@ function updatePrice() {
                         function OnceClicked() {
                             $("#reveal").attr("disabled", true);
 
-                            $("#betUp").on('click', function() {
-                                commitToDareCoin(1);
+                            $(".vote").on('click', function() {
+                                //commitToDareCoin(1);
+                                $("#voted").append("1 vote in");
                             });
 
                             $("#betNoChange").on('click', function() {
