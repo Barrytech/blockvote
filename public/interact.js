@@ -270,19 +270,19 @@ function updatePrice() {
                                         console.log("we pressed reveal");
                                         $("#played").html(" <h2>Thank you for your bet. <br> We have received you reveal <br> and are processing it</h2>");
                                         // manipulate the DOM here accordingly
-                                    })
-                                })
+                                    });
+                                });
                             }
                         }
 
                         // { /* //Function connected to smart contract\ */ }
 
                         function OnceClicked() {
-                            $("#reveal").attr("disabled", true);
+
 
                             $(".vote").on('click', function() {
                                 commitToDareCoin(1);
-
+                                $(".vote").attr("disabled", true);
                             });
 
                             $("#betNoChange").on('click', function() {
