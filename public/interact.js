@@ -125,11 +125,11 @@ function updatePrice() {
                     console.log("You don't have an account yet");
                 } else {
                     var myAccount = web3.eth.accounts[0];
-                    $.ajax(dareCoinABI, { dataType: 'json' }).done(function(abi) {
+                    $.ajax(electionABI, { dataType: 'json' }).done(function(abi) {
 
-                        var dareCoinAddress = abi.networks["4"].address;
-                        var dareCoin = web3.eth.contract(abi.abi).at(dareCoinAddress); // create functions from the ABI
-                        dareCoin.getGameState.call({ from: myAccount }, function(error, gameState) { // 'peek' is now a function!
+                        var electionAddress = abi.networks["4"].address;
+                        var election = web3.eth.contract(abi.abi).at(electionAddress); // create functions from the ABI
+                        election.getGameState.call({ from: myAccount }, function(error, gameState) { // 'peek' is now a function!
 
                             // COMMIT_STATE = 0, REVEAL_STATE = 1, PAYOUT_STATE = 2
                             console.log("The gameState is: " + gameState);
@@ -155,9 +155,9 @@ function updatePrice() {
 
                         });
                         //this function read who is the winner from the smart contract ---To modify
-                        dareCoin.getNumberOfWinners.call({ from: myAccount }, function(error, numWinners) {
+                        election.getNumberOfWinners.call({ from: myAccount }, function(error, numWinners) {
                             for (var i = 0; i < numWinners; i++) {
-                                dareCoin.getLastWinners.call(i, { from: myAccount }, function(error, lastWinner) { // 'peek' is now a function!
+                                election.getLastWinners.call(i, { from: myAccount }, function(error, lastWinner) { // 'peek' is now a function!
                                     // COMMIT_STATE = 0, REVEAL_STATE = 1, PAYOUT_STATE = 2
                                     console.log("Winner " + i + " is: " + lastWinner);
                                 });
@@ -168,7 +168,7 @@ function updatePrice() {
                         setTimeout(updateGameState, 10000);
 
 
-                        function commitToDareCoin(value) {
+                        function commitToElection(value) {
 
                             globalValue = value;
 
@@ -184,10 +184,10 @@ function updatePrice() {
                                 console.log("You don't have an account yet");
                             } else {
                                 var myAccount = web3.eth.accounts[0];
-                                $.ajax(dareCoinABI, { dataType: 'json' }).done(function(abi) {
-                                    var dareCoinAddress = abi.networks["4"].address;
-                                    var dareCoin = web3.eth.contract(abi.abi).at(dareCoinAddress); // create functions from the ABI
-                                    dareCoin.commit.sendTransaction(hashCommit.valueOf(), { from: myAccount, value: 10000000000000000, gas: 555555 }, function(error, ethResult) {
+                                $.ajax(electionABI, { dataType: 'json' }).done(function(abi) {
+                                    var electionAddress = abi.networks["4"].address;
+                                    var election = web3.eth.contract(abi.abi).at(electionAddress); // create functions from the ABI
+                                    election.commit.sendTransaction(hashCommit.valueOf(), { from: myAccount, value: 10000000000000000, gas: 555555 }, function(error, ethResult) {
                                         // handle the result of the transaction here
                                         console.log("txHash: " + ethResult);
                                         // disable the commit button
@@ -208,11 +208,11 @@ function updatePrice() {
                                 console.log("You don't have an account yet");
                             } else {
                                 var myAccount = web3.eth.accounts[0];
-                                $.ajax(dareCoinABI, { dataType: 'json' }).done(function(abi) {
-                                    var dareCoinAddress = abi.networks["4"].address;
+                                $.ajax(electionABI, { dataType: 'json' }).done(function(abi) {
+                                    var electionAddress = abi.networks["4"].address;
                                     console.log("The address is: " + dareCoinAddress);
-                                    var dareCoin = web3.eth.contract(abi.abi).at(dareCoinAddress); // create functions from the ABI
-                                    dareCoin.payout.sendTransaction({ from: myAccount, value: 0, gas: 555555 }, function(error, ethResult) {
+                                    var election = web3.eth.contract(abi.abi).at(electionAddress); // create functions from the ABI
+                                    election.payout.sendTransaction({ from: myAccount, value: 0, gas: 555555 }, function(error, ethResult) {
                                         //handle the result of the transaction here
                                         // manipulate the DOM here accordingly
                                         console.log("we pressed payout");
@@ -228,14 +228,14 @@ function updatePrice() {
                                 console.log("You don't have an account yet");
                             } else {
                                 var myAccount = web3.eth.accounts[0];
-                                $.ajax(dareCoinABI, { dataType: 'json' }).done(function(abi) {
-                                    var dareCoinAddress = abi.networks["4"].address;
-                                    console.log("The address is: " + dareCoinAddress);
-                                    var dareCoin = web3.eth.contract(abi.abi).at(dareCoinAddress); // create functions from the ABI
+                                $.ajax(electionABI, { dataType: 'json' }).done(function(abi) {
+                                    var electionAddress = abi.networks["4"].address;
+                                    console.log("The address is: " + electionAddress);
+                                    var election = web3.eth.contract(abi.abi).at(electionAddress); // create functions from the ABI
                                     // dareCoin.owner.call(0, {from: myAccount}, function(error, owner){
                                     //   if owner == web3.eth.accounts[0];
                                     // }
-                                    dareCoin.resetGame.sendTransaction({ from: myAccount, value: 0, gas: 555555 }, function(error, ethResult) {
+                                    election.resetGame.sendTransaction({ from: myAccount, value: 0, gas: 555555 }, function(error, ethResult) {
                                         //handle the result of the transaction here
 
                                         console.log("we pressed reset");
@@ -245,7 +245,7 @@ function updatePrice() {
                             }
                         }
 
-                        function revealToDareCoin(value) {
+                        function revealToElection(value) {
 
                             var theValue = "" + value;
                             var theSalt = salt;
@@ -255,16 +255,16 @@ function updatePrice() {
                                 console.log("You don't have an account yet");
                             } else {
                                 var myAccount = web3.eth.accounts[0];
-                                $.ajax(dareCoinABI, { dataType: 'json' }).done(function(abi) {
-                                    var dareCoinAddress = abi.networks["4"].address;
+                                $.ajax(electionABI, { dataType: 'json' }).done(function(abi) {
+                                    var electionAddress = abi.networks["4"].address;
                                     console.log("The address is: " + dareCoinAddress);
-                                    var dareCoin = web3.eth.contract(abi.abi).at(dareCoinAddress); // create functions from the ABI
+                                    var election = web3.eth.contract(abi.abi).at(dareCoinAddress); // create functions from the ABI
 
                                     console.log("TODO: implement revealToDareCoin..");
                                     console.log("theValue: " + theValue);
                                     console.log("theSalt: " + theSalt);
 
-                                    dareCoin.reveal.sendTransaction(theValue, theSalt, { from: myAccount, value: 0, gas: 555555 }, function(error, ethResult) {
+                                    election.reveal.sendTransaction(theValue, theSalt, { from: myAccount, value: 0, gas: 555555 }, function(error, ethResult) {
                                         //handle the result of the transaction here
                                         console.log(error, ethResult);
                                         console.log("we pressed reveal");
@@ -282,26 +282,26 @@ function updatePrice() {
 
                             $("#betUp").on('click', function() {
                                 commitToDareCoin(1);
-                            })
+                            });
 
                             $("#betNoChange").on('click', function() {
                                 commitToDareCoin(2);
-                            })
+                            });
 
                             $("#betDown").on('click', function() {
                                 commitToDareCoin(0);
-                            })
+                            });
 
                             $("#reveal").on('click', function() {
                                 revealToDareCoin(globalValue);
-                            })
+                            });
                             $("#reset").on('click', function() {
                                 resetGame();
-                            })
+                            });
 
                             $("#payout").on('click', function() {
                                 payout();
-                            })
+                            });
 
                         };
 
