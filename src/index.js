@@ -11,12 +11,3 @@ ReactDOM.render( < App / > , document.getElementById('root'));
 // Learn more about service workers: https://bit.ly/CRA-PWA
 
 serviceWorker.unregister();
-
-componentDidMount() {
-    const script = document.createElement("script");
-    script.src = "/static/public/interact.js";
-    script.async = true;
-    script.onload = () => this.scriptLoaded();
-
-    document.body.appendChild(script);
-}
