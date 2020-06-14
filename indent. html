@@ -1,0 +1,335 @@
+<!-- 
+    Class 1:
+        1.1 Wireframe your project
+        1.2 Fork and clone the repo and set up your project workspace
+    Class 2:  
+        2.1 Link your files in the head of the docment Add a Nav Bar to your site - It should have three links (Portfolio, About, and Contact) 
+        2.2 Add a div for each section. Within section add a contatiner div with the appropriate number of rows and columns
+    Class 3:  
+        3.1 Add thumbnails and other custom component (button, modal, font) using bootstrap Documentation 
+        3.2 Add CSS and add your site to gh-pages 
+-->
+
+<!DOCTYPE html>
+
+<head>
+    <!-- Latest compiled and minified CSS -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <script src="js/script.js"></script>
+    <link rel="icon" href="images/logo.jpg" type='image/x-icon'>
+    <title> Portfolio </title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Fontawesome CSS  -->
+
+</head>
+
+<body data-spy="scroll" data-target=".navbar">
+
+    <nav class="navbar navbar-inverse navbar-static-top navbar-fixed-top" id="menu" class="navbar navbar-light" style="background-color: #900C3F; navbar-fixed-top" role="navigation">
+
+
+        <h2 style="text-align:center; font-weight: bolder; font-style: italic;  font-family: Times; font-size: 35px; color: white">Student Junior Software Engineer</h2>
+
+        <div class="row">
+           
+            <ul style=" list-style-type: none">
+                <div class="col-md-1"></div>
+                <div class="col-md-3 bold">
+                    <li class="nav-item">
+                        <a style="color:white" href="#home">
+                            Home
+                        </a>
+                    </li>
+                </div>
+                <div class="col-md-3 bold">
+                    <li class="nav-item">
+                        <a style="color:white" href="#projects">
+                            Projects
+                            </a>
+                    </li>
+                </div>
+                <div class="col-md-3 bold">
+                    <li class="nav-item">
+                        <a style="color:white" href="#contact">
+                            Contact
+                        </a>
+                    </li>
+                </div>
+                    <div class="col-md-1"></div>
+                  </ul>
+
+        </div>
+      
+        </div>
+        </div>
+        </div>   
+    </nav>
+      
+  
+    <br> <br>
+   
+
+   <main>
+    <div id="home">
+    <br> <br> <br><br>  
+    <h4 style="text-align:center; font-weight: bolder; font-style: italic;  font-family: Times; font-size: 35px; color: black"> Abdoul Barry </h4>
+    <div class="container mycontainer" >
+         <h2  style="font-weight: bolder; font-family: Times; font-size: 20px; text-align: center"> I don't even know what I don't know! But I am willing to learn.</h2>
+        <h3 style="font-weight: bolder; text-align: left; font-family: Times; font-size: 35px"> About me:</h3>
+      
+          
+           <P style=" font-family: Time; font-size: 20px">
+              My name is Abdoul Barry, I am a Math and Computer Science Student at St. Joseph's College, NY. 
+              I am passionate about computer programming. Fortunately, I had the chance to be part of ScriptEd - 
+              now Code Nation - which has been more than an opportunity to learn to code. This was my first real 
+              exposure to the tech industry and programming as I now know it rather than what I usually had heard.
+              This is my portfolio website as a Student Junior Software Engineer, as I often call myself. It contains 
+              Projects I have worked on or am currently working on. Make sure to take a look at my work as I have 
+              a live link to each project and also a link to the github repository.
+            </p>
+            <br> <br><br> <br> <br>     
+</div>
+</div>
+<h4 style=" font-style: italic;font-weight: bold; font-family: Times;text-align:center"> "As scientists, we thought of fate, it's nothing more than a convergence of a set of probabilities into one potential outcome" - William Bell (Fringe)</h4>
+<br> <br> <br><br> <br> <br><br> <br> <br><br> <br> <br><br> <br> <br><br> <br>
+
+
+
+
+
+<div id="projects">
+ <br> 
+    <!-- Portfolio Grid Section -->
+    <section id="portfolio">
+        <h2 style=" font-weight: bolder; font-family: Times; font-size: 35px">  Portfolio </h2>
+        <br>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">               
+                </div>
+            </div>
+            <div class="row">         
+                 <div class="col-sm-4 portfolio-item">
+                   <div class="thumbnail">   
+                    <h4 class="text-center" style="font-weight: bold">Bakery site prototype</h4>
+                    <img src="https://media.timeout.com/images/102578971/image.jpg" class="img-responsive" alt="Safe">
+                        <div class="caption text-center"> 
+                             <a href="https://preview.c9users.io/brucunz/lousbakesandcakes/Home.html?_c9_id=livepreview0&_c9_host=https://ide.c9.io"> 
+                                <button class="btn btn-outline"> Live Site </button>
+                             </a> 
+                             <a href="https://github.com/BrucunZ/Lou-s-Bakes-N-Cakes"> 
+                                 <button class="btn btn-outline"> Source </button>
+                             </a>  
+                        </div> 
+                    </div>       
+                </div>    
+              
+                <div class="col-sm-4 portfolio-item">
+                    <div class="thumbnail">
+                        <h4 class="text-center" style="font-weight: bold">Pig Latinizer</h4>
+                        <img src="https://uploads.scratch.mit.edu/projects/thumbnails/41043392.png" class="img-responsive" alt="Slice of cake">
+                        <div class="caption text-center"> 
+                            <a href="https://barrytech.github.io/piglatinizer/"> 
+                                <button class="btn btn-outline"> Live Site </button>
+                            </a> 
+                            <a href="https://github.com/Barrytech/piglatinizer"> 
+                                <button class="btn btn-outline"> Source </button>
+                            </a>  
+                        </div> 
+                    </div>      
+                </div>
+
+                <div class="col-sm-4 portfolio-item"> 
+                    <div class="thumbnail">
+                        <h4 class="text-center" style="font-weight: bold">Hangman</h4>                 
+                        <img src="http://exchangedownloads.smarttech.com/public/content/77/7704d7bf-44c6-4880-ae1e-0a91740d0a42/previews/medium/0001.png" class="img-responsive" alt="Circus tent"> 
+                        <div class="caption text-center"> 
+                            <a href="https://barrytech.github.io/unit13HangmanStarterCode/"> 
+                                <button class="btn btn-outline"> Live Site </button>
+                            </a> 
+                            <a href="https://github.com/Barrytech/unit13HangmanStarterCode"> 
+                                <button class="btn btn-outline"> Source </button>
+                            </a>  
+                        </div> 
+                    </div>      
+                </div>
+             
+                 <div class="col-sm-4 portfolio-item"> 
+                    <div class="thumbnail">    
+                        <h4 class="text-center" style="font-weight: bold">Rock Paper Sissors</h4>
+                        <img src="http://i.telegraph.co.uk/multimedia/archive/03015/RockPaperScissors_3015010k.jpg" class="img-responsive" alt="Cabin">
+                        <div class="caption text-center">                 
+                            <a href="https://barrytech.github.io/advanced_rockpaperscissors_startercode/"> 
+                                <button class="btn btn-outline"> Live Site </button>
+                            </a> 
+                            <a href="https://github.com/Barrytech/advanced_rockpaperscissors_startercode"> 
+                                <button class="btn btn-outline"> Source </button>
+                            </a>  
+                        </div> 
+                    </div>         
+                </div>
+
+                   <div class="col-sm-4 portfolio-item">
+                    <div class="thumbnail">
+                        <h4 class="text-center" style="font-weight: bold">Playlist</h4>
+                        <img src="http://sacnas.org/wp-content/uploads/2017/11/Slide_Playlist-Cover-2017-SACNAS-1.png" class="img-responsive" alt="Game controller">
+                        <div class="caption text-center"> 
+                            <a href="https://barrytech.github.io/playlist/"> 
+                                <button class="btn btn-outline"> Live Site </button>
+                            </a> 
+                            <a href="https://github.com/Barrytech/playlist"> 
+                                <button class="btn btn-outline"> Source </button>
+                            </a>  
+                        </div>    
+                    </div>    
+                </div>
+               
+                <div class="col-sm-4 portfolio-item">
+                   <div class="thumbnail">   
+                    <h4 class="text-center" style="font-weight: bold">Mario Game</h4>
+                    <img src="https://farm9.staticflickr.com/8606/16616565962_bbba07455a_b.jpg" class="img-responsive" alt="Safe">
+                        <div class="caption text-center"> 
+                             <a href="https://preview.c9users.io/barry16/gamerandom/index.html?_c9_id=livepreview0&_c9_host=https://ide.c9.io"> 
+                                <button class="btn btn-outline"> Live Site </button>
+                             </a> 
+                             <a href="https://github.com/Barrytech/sidescroll-game"> 
+                                 <button class="btn btn-outline"> Source </button>
+                             </a>  
+                        </div> 
+                    </div>       
+                </div>
+            </div>
+
+             <div class="col-sm-4 portfolio-item">
+                   <div class="thumbnail">   
+                    <h4 class="text-center" style="font-weight: bold">API Project</h4>
+                    <img src="images/developer_500.jpg" class="img-responsive" alt="Safe">
+                        <div class="caption text-center"> 
+                             <a href="https://barrytech.github.io/ApisGifs/"> 
+                                <button class="btn btn-outline"> Live Site </button>
+                             </a> 
+                             <a href="https://github.com/Barrytech/ApisGifs"> 
+                                 <button class="btn btn-outline"> Source </button>
+                             </a>  
+                        </div> 
+                    </div>       
+                </div>
+
+                 <div class="col-sm-4 portfolio-item">
+                   <div class="thumbnail">   
+                    <h4 class="text-center" style="font-weight: bold">Job search engine</h4>
+                    <img src="images/09.png" class="img-responsive" alt="Safe">
+                        <div class="caption text-center"> 
+                             <a href="https://preview.c9users.io/mlgpepe01/clientproject/index.html?_c9_id=livepreview0&_c9_host=https://ide.c9.io"> 
+                                <button class="btn btn-outline"> Live Site </button>
+                             </a> 
+                             <a href=""> 
+                                 <button class="btn btn-outline"> Source </button>
+                             </a>  
+                        </div> 
+                    </div>       
+                </div>
+
+                 <div class="col-sm-4 portfolio-item">
+                   <div class="thumbnail">   
+                    <h4 class="text-center" style="font-weight: bold">BlockVote</h4>
+                    <img src="http://cucsa.org.uk/wp-content/uploads/2015/10/Work_In_Progress.png" class="img-responsive" alt="Safe">
+                        <div class="caption text-center"> 
+                             <a href=""> 
+                                <button class="btn btn-outline"> Live Site </button>
+                             </a> 
+                             <a href=""> 
+                                 <button class="btn btn-outline"> Source </button>
+                             </a>  
+                        </div> 
+                    </div>       
+                </div>
+
+                 <div class="col-sm-4 portfolio-item">
+                   <div class="thumbnail">   
+                    <h4 class="text-center" style="font-weight: bold">Curriclum Vitae</h4>
+                    <img src="http://cucsa.org.uk/wp-content/uploads/2015/10/Work_In_Progress.png" class="img-responsive" alt="Safe">
+                        <div class="caption text-center"> 
+                             <a href=""> 
+                                <button class="btn btn-outline"> Live Site </button>
+                             </a> 
+                             <a href=""> 
+                                 <button class="btn btn-outline"> Source </button>
+                             </a>  
+                        </div> 
+                    </div>       
+                </div>
+        </div>
+    </section>
+</div>
+<br> <br> <br><br> <br> <br><br> <br> <br><br> <br> <br> 
+<br> <br> <br><br> <br> <br><br> <br> 
+
+
+<div id="contact">
+<div class="container mycontainer">
+        <br>
+        <h2 style="text-align:center; font-weight: bolder; font-family: Times; font-size: 40px"> Feedback always </h2>
+
+        <div class="row">
+            <div class="col-md-5">
+                <h3 style="text-align:center; font-weight: bolder; font-family: Times;  color: black"> Help me improve!</h3>
+                <P style=" font-family: Time; font-size: 20px">
+                    The greatest part of my creation from writing literature to programming is getting feedback. I am too young to be a professional in any of my passion. Any thought you get about my work, is very important to me to know because it helps me do better. Just
+                    like Daniel Coyle theorizes in The talent code, screwing up somehow makes us better because we learn from our mistakes which I just describe as experiences that grow us and shape us into a more skilled person.
+                </P>
+            </div>
+            <div class="col-md-7">
+                <form> <br <div class="col-md-6">
+                    <h4 style=" color: blue; text-align: center; font-weight: bold;font-style: cursive"> Leave a note </h4>
+                    <div id="fast" class="jumbotron">
+                        <form method="https://formspree.io/barryabdoul2024@gmail.com">
+                            <div class="form-group row">
+                                <label id="first-name" for="example-search-input" class="col-2 col-form-label">First Name </label>
+                                <div class="col-10">
+                                    <input id="first-name-feild" class="form-control" type="search" id="example-search-input">
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label id="last-name-name" for="example-search-input" class="col-2 col-form-label">Last Name</label>
+                                <div class="col-10">
+                                    <input id="last-nname-feild" class="form-control" type="search" id="example-search-input">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="example-email-input" class="col-2 col-form-label">Email</label>
+                                <div class="col-10">
+                                    <input class="form-control userid2" type="email" id="example-email-input">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="example-email-input" class="col-2 col-form-label">Questions</label>
+                                <br>
+                                <div class="col-md-10">
+                                    <textarea id="comments" type="textarea" name="" /> </textarea>
+                                </div>
+                            </div>
+
+                            <br>
+                            <button type="submit" class="btn btn-primary">
+                                 <a href="welcome.html"  id="submit" style="color:white">  Submit </a>
+                            </button>
+                    </div>
+            </div>
+            <div class="col-md-3"> </div>
+        </div>
+        </form>
+    </div>
+    </div>
+    </div>
+</div>
+</main>
+
+</body>
+
+</html>
