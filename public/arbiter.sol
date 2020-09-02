@@ -25,6 +25,7 @@ modifier ownerOnly(){
     _;
     // _; represent the the rest of the function below
 }
+//hello world
 
 function elect(string memory _name) public{
 owner= msg.sender;
